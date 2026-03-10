@@ -203,6 +203,13 @@
             hamburger.addEventListener('click', () => {
                 menuLinks.classList.toggle('open');
             });
+
+            // Close menu when clicking a link
+            menuLinks.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A') {
+                    menuLinks.classList.remove('open');
+                }
+            });
         });
     </script>
 </body>

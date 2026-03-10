@@ -17,6 +17,13 @@
     <header class="site-header">
         <nav class="main-nav container">
             <div class="logo"><a href="index.html">Thomas &amp; Tech Blog</a></div>
+
+            <button class="hamburger" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <ul class="menu-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#about">A propos de moi</a></li>
@@ -149,5 +156,23 @@
         });
     </script>
     -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hamburger menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const menuLinks = document.querySelector('.menu-links');
+
+            hamburger.addEventListener('click', () => {
+                menuLinks.classList.toggle('open');
+            });
+
+            // Close menu when clicking a link
+            menuLinks.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A') {
+                    menuLinks.classList.remove('open');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
