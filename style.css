@@ -21,7 +21,7 @@ body {
 .container { max-width:1200px; margin:auto; padding:0 20px; }
 
 /* ================= HEADER ==================== */
-.site-header{background:#111;color:#fff;}
+.site-header{background:#111;color:#fff; position:relative; z-index:10;}
 .main-nav{
     display:flex;
     justify-content:space-between;
@@ -75,6 +75,7 @@ body {
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
+        z-index: 20;
     }
     .menu-links.open {
         max-height: 300px;
