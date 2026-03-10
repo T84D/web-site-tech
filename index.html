@@ -193,7 +193,19 @@
                 console.error('Erreur mise à jour posts récents:', e);
             }
         }
-        document.addEventListener('DOMContentLoaded', updateRecent);
+        document.addEventListener('DOMContentLoaded', () => {
+            updateRecent();
+            window.scrollTo(0, 0);
+
+            // Hamburger menu toggle
+            const menuToggle = document.getElementById('menu-toggle');
+            const menuLinks = document.querySelector('.menu-links');
+            const hamburger = document.querySelector('.hamburger');
+
+            hamburger.addEventListener('click', () => {
+                menuToggle.checked = !menuToggle.checked;
+            });
+        });
     </script>
 </body>
 </html>

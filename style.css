@@ -332,4 +332,4 @@ textarea{width:100%;padding:.75rem;}
 .post-social span{margin-right:10px;color:rgba(11,18,32,.75);font-weight:600}
 .post-social a{color:var(--primary);text-decoration:none;padding:10px 14px;border-radius:8px;border:1px solid rgba(43,106,197,.12);transition:background .12s, color .12s, transform .12s;font-weight:600}
 .post-social a:hover{background:rgba(43,106,197,.08);color:#154a82;transform:translateY(-2px)}
-@media (max-width:600px){.post-social{flex-direction:column;align-items:flex-start;gap:8px;padding:14px}.post-social a{padding:8px 10px;font-size:1rem}}
+@media (max-width:600px){.post-social{flex-direction:column;align-items:center;gap:8px;padding:14px}.post-social a{padding:8px 10px;font-size:1rem}}
