@@ -76,7 +76,7 @@ body {
         overflow: hidden;
         transition: max-height 0.3s ease;
     }
-    .menu-toggle:checked ~ .menu-links {
+    .menu-links.open {
         max-height: 300px;
     }
     .menu-links li {
