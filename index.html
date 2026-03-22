@@ -1,0 +1,227 @@
+<!-- Fichier index principal du blog Thomas & Tech -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Thomas &amp; Tech — Blog</title>
+    <!-- Mobile first -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 1. Link to the external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- 2. Optional: Google Fonts (Inter) – feel free to change the font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/it-letter-logo-mini.jpg" type="image/jpeg" sizes="32x32">
+    <link rel="shortcut icon" href="images/it-letter-logo-mini.jpg">
+</head>
+
+<!-- Le contenu visible de la page commence ici -->
+<body>
+    <!-- ================= HEADER / NAVIGATION ==================== -->
+    <header class="site-header">
+        <nav class="main-nav container">
+            <div class="logo"><a href="#">Thomas &amp; Tech Blog</a></div>
+
+            <ul class="menu-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">A propos de moi</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="posts.html">Posts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ================= HERO SECTION ==================== -->
+    <section id="hero" class="hero-section container">
+        <h1>Bonjour, je suis Thomas, Je suis passionné de technologie &amp; blogger.</h1>
+        <p>Je répare des ordinateurs dans mon temps libres et je m'interesse aux dernières tendances du monde informatique.</p>
+
+        <!-- CTA -->
+        <div class="hero-ctas">
+            <a href="#posts" class="cta-button">Lire mes posts</a>
+            <a href="#services" class="cta-secondary cta-button">Voir les services</a>
+        </div> 
+    </section>
+
+    <!-- ================= ABOUT ME SECTION ==================== -->
+    <section id="about" class="about-section container">
+        <h2>A propos de moi</h2>
+        <article class="profile-box">
+            <img src="images/profile-picture.jpg"
+                 alt="Thomas profile picture" />
+            <div class="profile-details">
+                <p><strong>Nom:</strong> Thomas Durieu</p>
+                <p><strong>Age:</strong> 18 ans</p>
+                <p><strong>Email:</strong> tdurieu84@gmail.com</p>
+                <p><strong>Compétences:</strong> Réparation et maintenance d’ordinateurs, Diagnostic de pannes et résolution de problèmes informatiques, Configuration et sécurisation de réseaux, Installation et mise en service de systèmes d’exploitation.</p>
+            </div>
+        </article>
+    </section>
+
+    <!-- ================= SERVICES SECTION ==================== -->
+    <section id="services" class="services-section container">
+        <h2>Services</h2>
+        <p>Voici les services que je propose pour améliorer votre expérience informatique.</p>
+        <div class="service-grid">
+            <article class="service-card service-card--win11">
+                <h3>Passage à Windows 11</h3>
+                <p>Migration sécurisée : sauvegarde, installation propre et optimisation post-installation.</p>
+                <a class="service-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfC9PecLZi0MKAfa8HTW3rwkGhDiSj6WW8saaYGLOQhZT0aJQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">Demander un devis</a>
+            </article>
+            <article class="service-card">
+                <h3>Amélioration de rapidité</h3>
+                <p>Optimisation système, nettoyage, mise à niveau matérielle et conseils personnalisés.</p>
+                <a class="service-button" href="https://docs.google.com/forms/d/e/1FAIpQLScmCugflU74qxixSzJV704cmZ7r8b74Md90mUEpq7K8EKYYbw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Demander un devis</a>
+            </article>
+            <article class="service-card service-card--apps">
+                <h3>Installation d'applications (ex: Microsoft Office)</h3>
+                <p>Installation, activation et configuration d'applications (par ex. Microsoft Office — Word, Excel, Outlook) et autres logiciels sur demande.</p>
+                <a class="service-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfy6cNzqREHJ1kUa1Onks8aRpXboZ2Aa_xrLl9iutvh6G_8EQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">Demander un devis</a>
+            </article>
+            <article class="service-card">
+                <h3>Demande générale</h3>
+                <p>Une question ou demande particulière ? Envoyez une demande générale et je vous répondrai rapidement.</p>
+                <a class="service-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfXQi4z50-4vulx-aqF1SjhlI-3Ozp4NLI_UY9xXHBR7au_GA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">Faire une demande</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- ================= POSTS LIST SECTION ==================== -->
+    <section id="posts" class="posts-section container">
+        <h2>Posts récents</h2>
+
+        <div class="post-grid">
+            <!-- Post 3 (priorité fixe dans les récents) -->
+            <article class="post-card" data-static="mon-projet">
+                <img src="images/Image-image-Etats-Unis-New-York-Statue-Liberte.jpg"
+                     alt="Mon projet" />
+
+                <h3><a href="posts.html">Mon projet</a></h3>
+                <p>le projet de toute une vie.</p>
+
+                <span class="post-date">25‑01‑2026</span>
+            </article>
+
+            <!-- Post 2 (priorité fixe dans les récents) -->
+            <article class="post-card" data-static="ma-nouvelle-carte">
+                <img src="images/sapphire-nitro-plus-rx-9060-XT.jpg"
+                     alt="Ma nouvelle carte graphique" />
+
+                <h3><a href="posts.html">Ma nouvelle carte graphique</a></h3>
+                <p>Installation et configuration de ma nouvelle carte graphique.</p>
+
+                <span class="post-date">24‑01‑2026</span>
+            </article>
+
+            <!-- AMD (priorité fixe, remplacé par nouveau AMD si présent) -->
+            <article class="post-card" data-amd="true">
+                <img src="images/AMD-Logo.jpg" alt="AMD" />
+                <h3><a href="posts.html">AMD</a></h3>
+                <p>Article AMD à jour (automatiquement remplacé si nouveau AM D présent).</p>
+                <span class="post-date">26‑02‑2026</span>
+            </article>
+
+            <!-- Placeholder 4e post (sera remplacé par le plus récent autre que Mon projet/Ma nouvelle carte/AMD) -->
+            <article class="post-card">
+                <img src="images/dlss5.0comparaison.png" alt="Nvidia DLSS 5.0" />
+
+                <h3><a href="blog-post-08.html">Nvidia DLSS 5.0 filtre IA</a></h3>
+                <p>Découverte des nouveautés du filtre IA de DLSS 5.0.</p>
+
+                <span class="post-date">16‑03‑2026</span>
+            </article>
+        </div>
+    </section>
+
+    <!-- liens vers les réseaux sociaux et autres profils -->
+    <div class="post-social container">
+        <span>Où me retrouver:</span>
+        <a href="https://twitter.com/T84D144hz">X</a>
+        <a href="https://github.com/T84D">GitHub</a>
+        <a href="https://guns.lol/t84d">Guns</a>
+    </div>
+
+
+
+    <!-- ================= FOOTER ==================== -->
+    <footer class="site-footer container">
+        <p>© 2026 Thomas &amp; Tech Blog – All rights reserved.</p>
+    </footer>
+
+    <!-- auto-update recent posts from posts.html: mon projet, ma nouvelle carte, AMD, puis le plus récent autre -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const container = document.querySelector('#posts .post-grid');
+            if (!container) return;
+
+            const fallbackMonProjet = container.querySelector('[data-static="mon-projet"]');
+            const fallbackMaCarte = container.querySelector('[data-static="ma-nouvelle-carte"]');
+            const fallbackAMD = container.querySelector('[data-amd="true"]');
+
+            const parseDate = str => {
+                if (!str) return new Date(0);
+                const normalized = str.replace(/\u2011/g, '-').trim();
+                const parts = normalized.split('-');
+                if (parts.length !== 3) return new Date(0);
+                const d = parseInt(parts[0], 10);
+                const m = parseInt(parts[1], 10);
+                const y = parseInt(parts[2], 10);
+                if (Number.isNaN(d) || Number.isNaN(m) || Number.isNaN(y)) return new Date(0);
+                return new Date(y, m - 1, d);
+            };
+
+            try {
+                const resp = await fetch('posts.html');
+                const text = await resp.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(text, 'text/html');
+                const sourceCards = Array.from(doc.querySelectorAll('.post-grid .post-card'));
+
+                const findByTitle = title => sourceCards.find(c => (c.querySelector('h3')?.textContent || '').trim().toLowerCase() === title.toLowerCase());
+                const monProjet = findByTitle('Mon projet');
+                const maCarte = findByTitle('Ma nouvelle carte graphique');
+
+                const amdCards = sourceCards.filter(c => /AMD/i.test(c.querySelector('h3')?.textContent || ''));
+                amdCards.sort((a, b) => parseDate(b.querySelector('.post-date')?.textContent) - parseDate(a.querySelector('.post-date')?.textContent));
+                const newestAMD = amdCards[0] || null;
+
+                const excluded = new Set();
+                if (monProjet) excluded.add(monProjet);
+                if (maCarte) excluded.add(maCarte);
+                if (newestAMD) excluded.add(newestAMD);
+
+                const otherRecent = sourceCards
+                    .filter(c => !excluded.has(c))
+                    .sort((a, b) => parseDate(b.querySelector('.post-date')?.textContent) - parseDate(a.querySelector('.post-date')?.textContent));
+
+                container.innerHTML = '';
+
+                if (monProjet) container.appendChild(monProjet.cloneNode(true));
+                else if (fallbackMonProjet) container.appendChild(fallbackMonProjet.cloneNode(true));
+
+                if (maCarte) container.appendChild(maCarte.cloneNode(true));
+                else if (fallbackMaCarte) container.appendChild(fallbackMaCarte.cloneNode(true));
+
+                if (newestAMD) {
+                    const cloneAMD = newestAMD.cloneNode(true);
+                    cloneAMD.setAttribute('data-amd', 'true');
+                    container.appendChild(cloneAMD);
+                } else if (fallbackAMD) {
+                    container.appendChild(fallbackAMD.cloneNode(true));
+                }
+
+                if (otherRecent.length > 0) {
+                    container.appendChild(otherRecent[0].cloneNode(true));
+                }
+            } catch (e) {
+                console.error('Erreur mise à jour posts récents:', e);
+            }
+        });
+    </script>
+</body>
+</html>

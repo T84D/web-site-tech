@@ -1,0 +1,163 @@
+<!-- Page listant tous les posts du blog -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Tous les posts — Thomas & Tech</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/it-letter-logo.jpg" type="image/jpeg" sizes="32x32">
+    <link rel="shortcut icon" href="images/it-letter-logo.jpg">
+</head>
+
+<!-- Le contenu visible de la page commence ici -->
+<body>
+    <header class="site-header">
+        <nav class="main-nav container">
+            <div class="logo"><a href="index.html">Thomas &amp; Tech Blog</a></div>
+            <ul class="menu-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">A propos de moi</a></li>
+                <li><a href="posts.html">Posts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="posts" class="posts-section">
+            <h1>Tous les posts</h1>
+            <div class="post-grid">
+                <!-- Post 1 (ancien AMD) -->
+                <a class="post-link" href="blog-post-01.html">
+                <article class="post-card">
+                    <img src="images/AMD-Logo.jpg" alt="AMD" />
+                    <h3>Mise à jour AMD Adrenalin 26.1.1</h3>
+                    <p>improvemant et correction de bugs de la version 26.1.1.</p>
+                    <span class="post-date">21‑01‑2026</span>
+                </article>
+                </a>
+
+                <!-- Post 2 -->
+                <a class="post-link" href="blog-post-02.html">
+                <article class="post-card">
+                    <img src="images/sapphire-nitro-plus-rx-9060-XT.jpg" alt="Ma nouvelle carte graphique" />
+                    <h3>Ma nouvelle carte graphique</h3>
+                    <p>Installation et configuration de ma nouvelle carte graphique.</p>
+                    <span class="post-date">24‑01‑2026</span>
+                </article>
+                </a>
+
+                <!-- Post 3 -->
+                <a class="post-link" href="blog-post-03.html">
+                <article class="post-card">
+                    <img src="images/Image-image-Etats-Unis-New-York-Statue-Liberte.jpg" alt="mon projet" />
+                    <h3>Mon projet</h3>
+                    <p>le projet de toute une vie.</p>
+                    <span class="post-date">25‑01‑2026</span>
+                </article>
+                </a>
+
+                <!-- Post 4 -->
+                <a class="post-link" href="blog-post-04.html">
+                <article class="post-card">
+                    <img src="images/AMD-Logo.jpg" alt="AMD Adrenalin 26.2.1" />
+                    <h3>Mise à jour AMD Adrenalin 26.2.1</h3>
+                    <p>improvemant et correction de bugs de la version 26.2.1.</p>
+                    <span class="post-date">11‑02‑2026</span>
+                </article>
+                </a>
+
+                <!-- Post 5 -->
+                <a class="post-link" href="blog-post-05.html">
+                <article class="post-card">
+                    <img src="images/AMD-Logo.jpg" alt="AMD Adrenalin 26.2.2" />
+                    <h3>Mise à jour AMD Adrenalin 26.2.2</h3>
+                    <p>support de Resident Evil Requiem, Marathon et corrections de bugs.</p>
+                    <span class="post-date">26‑02‑2026</span>
+                </article>
+                </a>
+
+                <!-- Post 6 -->
+                <a class="post-link" href="blog-post-06.html">
+                <article class="post-card">
+                    <img src="images/S26-picture.jpg" alt="Samsung Galaxy S26" />
+                    <h3>Samsung Galaxy S26</h3>
+                    <p>Présentation de la nouvelle gamme Galaxy S26 avec IA intégrée et améliorations photo.</p>
+                    <span class="post-date">05‑03‑2026</span>
+                </article>
+                </a>
+
+                <!-- Post 7 -->
+                <a class="post-link" href="blog-post-7.html">
+                <article class="post-card">
+                    <img src="images/Ram-shortage.png" alt="Crise des prix RAM" />
+                    <h3>Crise des prix des RAM causée par l'IA</h3>
+                    <p>Analyse de l'impact de l'IA sur les prix de la mémoire vive et les perspectives futures.</p>
+                    <span class="post-date">05‑03‑2026</span>
+                </article>
+                </a>
+
+                <!-- Post 8 -->
+                <a class="post-link" href="blog-post-08.html">
+                <article class="post-card">
+                    <img src="images/dlss5.0comparaison.png" alt="Nvidia DLSS 5.0" />
+                    <h3>Nvidia DLSS 5.0 filtre IA</h3>
+                    <p>Découverte des nouveautés et du filtre IA de la dernière version DLSS 5.0.</p>
+                    <span class="post-date">16‑03‑2026</span>
+                </article>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- script to sort all posts by date (newest first) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.post-grid');
+            if (!container) return;
+            // sort the link wrappers so the hyperlinks stay intact
+            const links = Array.from(container.querySelectorAll('.post-link'));
+            links.sort((a, b) => {
+                const dateA = a.querySelector('.post-date')?.textContent || '';
+                const dateB = b.querySelector('.post-date')?.textContent || '';
+                const parse = str => {
+                    const parts = str.replace(/\u2011/g, '-').split('-');
+                    if (parts.length !== 3) return new Date(0);
+                    const [d, m, y] = parts.map(p => parseInt(p, 10));
+                    return new Date(y, m - 1, d);
+                };
+                return parse(dateB) - parse(dateA);
+            });
+            links.forEach(link => container.appendChild(link));
+        });
+    </script>
+
+
+
+    <footer class="site-footer container">
+        <p>© 2026 Thomas &amp; Tech Blog – All rights reserved.</p>
+    </footer>
+
+    <!-- auto-remove older AMD posts when a new one is added -->
+    <!-- script disabled so that all AMD posts appear in the full list -->
+    <!--
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.post-grid');
+            if (!container) return;
+            const cards = Array.from(container.querySelectorAll('.post-card'));
+            const amdPosts = cards.filter(card => {
+                const title = card.querySelector('h3')?.textContent || '';
+                return /AMD/i.test(title);
+            });
+            // keep only the last AMD post
+            if (amdPosts.length > 1) {
+                amdPosts.slice(0, -1).forEach(oldCard => oldCard.remove());
+            }
+        });
+    </script>
+    -->
+</body>
+</html>
