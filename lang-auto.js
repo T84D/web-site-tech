@@ -32,8 +32,7 @@
             } catch (err) {
                 // ignore storage errors
             }
-            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-            return prefersDark ? 'dark' : 'light';
+            return 'light';
         };
 
         var applyTheme = function (theme, button) {
