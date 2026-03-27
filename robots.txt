@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://t84d.github.io/web-site-tech/sitemap.xml
