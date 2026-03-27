@@ -97,44 +97,52 @@
 
         <div class="post-grid">
             <!-- Post 3 (priorité fixe dans les récents) -->
-            <article class="post-card" data-static="mon-projet">
+            <a class="post-link" href="blog-post-03.html" data-static="mon-projet">
+            <article class="post-card">
                 <img src="images/Image-image-Etats-Unis-New-York-Statue-Liberte.jpg"
                      alt="Mon projet" />
 
-                <h3><a href="posts.html">Mon projet</a></h3>
+                <h3>Mon projet</h3>
                 <p>le projet de toute une vie.</p>
 
                 <span class="post-date">25‑01‑2026</span>
             </article>
+            </a>
 
             <!-- Post 2 (priorité fixe dans les récents) -->
-            <article class="post-card" data-static="ma-nouvelle-carte">
+            <a class="post-link" href="blog-post-02.html" data-static="ma-nouvelle-carte">
+            <article class="post-card">
                 <img src="images/sapphire-nitro-plus-rx-9060-XT.jpg"
                      alt="Ma nouvelle carte graphique" />
 
-                <h3><a href="posts.html">Ma nouvelle carte graphique</a></h3>
+                <h3>Ma nouvelle carte graphique</h3>
                 <p>Installation et configuration de ma nouvelle carte graphique.</p>
 
                 <span class="post-date">24‑01‑2026</span>
             </article>
+            </a>
 
             <!-- AMD (priorité fixe, remplacé par nouveau AMD si présent) -->
-            <article class="post-card" data-amd="true">
+            <a class="post-link" href="blog-post-09.html" data-amd="true">
+            <article class="post-card">
                 <img src="images/AMD-Logo.jpg" alt="AMD" />
-                <h3><a href="posts.html">AMD</a></h3>
-                <p>Article AMD à jour (automatiquement remplacé si nouveau AM D présent).</p>
-                <span class="post-date">26‑02‑2026</span>
+                <h3>Mise à jour AMD Adrenalin 26.3.1</h3>
+                <p>Support de nouveaux jeux, FSR Upscaling 4.1 et plusieurs corrections importantes.</p>
+                <span class="post-date">19‑03‑2026</span>
             </article>
+            </a>
 
             <!-- Placeholder 4e post (sera remplacé par le plus récent autre que Mon projet/Ma nouvelle carte/AMD) -->
+            <a class="post-link" href="blog-post-08.html">
             <article class="post-card">
                 <img src="images/dlss5.0comparaison.png" alt="Nvidia DLSS 5.0" />
 
-                <h3><a href="blog-post-08.html">Nvidia DLSS 5.0 filtre IA</a></h3>
+                <h3>Nvidia DLSS 5.0 filtre IA</h3>
                 <p>Découverte des nouveautés du filtre IA de DLSS 5.0.</p>
 
                 <span class="post-date">16‑03‑2026</span>
             </article>
+            </a>
         </div>
     </section>
 
@@ -159,9 +167,9 @@
             const container = document.querySelector('#posts .post-grid');
             if (!container) return;
 
-            const fallbackMonProjet = container.querySelector('[data-static="mon-projet"]');
-            const fallbackMaCarte = container.querySelector('[data-static="ma-nouvelle-carte"]');
-            const fallbackAMD = container.querySelector('[data-amd="true"]');
+            const fallbackMonProjet = container.querySelector('.post-link[data-static="mon-projet"]');
+            const fallbackMaCarte = container.querySelector('.post-link[data-static="ma-nouvelle-carte"]');
+            const fallbackAMD = container.querySelector('.post-link[data-amd="true"]');
 
             const parseDate = str => {
                 if (!str) return new Date(0);
@@ -180,23 +188,23 @@
                 const text = await resp.text();
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(text, 'text/html');
-                const sourceCards = Array.from(doc.querySelectorAll('.post-grid .post-card'));
+                const sourceLinks = Array.from(doc.querySelectorAll('.post-grid .post-link'));
 
-                const findByTitle = title => sourceCards.find(c => (c.querySelector('h3')?.textContent || '').trim().toLowerCase() === title.toLowerCase());
+                const findByTitle = title => sourceLinks.find(link => (link.querySelector('h3')?.textContent || '').trim().toLowerCase() === title.toLowerCase());
                 const monProjet = findByTitle('Mon projet');
                 const maCarte = findByTitle('Ma nouvelle carte graphique');
 
-                const amdCards = sourceCards.filter(c => /AMD/i.test(c.querySelector('h3')?.textContent || ''));
-                amdCards.sort((a, b) => parseDate(b.querySelector('.post-date')?.textContent) - parseDate(a.querySelector('.post-date')?.textContent));
-                const newestAMD = amdCards[0] || null;
+                const amdLinks = sourceLinks.filter(link => /AMD/i.test(link.querySelector('h3')?.textContent || ''));
+                amdLinks.sort((a, b) => parseDate(b.querySelector('.post-date')?.textContent) - parseDate(a.querySelector('.post-date')?.textContent));
+                const newestAMD = amdLinks[0] || null;
 
                 const excluded = new Set();
                 if (monProjet) excluded.add(monProjet);
                 if (maCarte) excluded.add(maCarte);
-                if (newestAMD) excluded.add(newestAMD);
+                amdLinks.forEach(link => excluded.add(link));
 
-                const otherRecent = sourceCards
-                    .filter(c => !excluded.has(c))
+                const otherRecent = sourceLinks
+                    .filter(link => !excluded.has(link))
                     .sort((a, b) => parseDate(b.querySelector('.post-date')?.textContent) - parseDate(a.querySelector('.post-date')?.textContent));
 
                 container.innerHTML = '';
@@ -218,6 +226,9 @@
                 if (otherRecent.length > 0) {
                     container.appendChild(otherRecent[0].cloneNode(true));
                 }
+
+                // garde une limite stricte de 4 cartes
+                Array.from(container.children).slice(4).forEach(el => el.remove());
             } catch (e) {
                 console.error('Erreur mise à jour posts récents:', e);
             }
