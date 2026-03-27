@@ -146,6 +146,18 @@ body {
 .profile-box img{width:180px;height:auto;border-radius:5px;}
 .profile-details p{margin-top:8px;}
 
+@media (max-width:600px){
+    .profile-box{
+        flex-direction:column;
+        gap:15px;
+    }
+    .profile-box img{
+        width:100%;
+        max-width:280px;
+        height:auto;
+    }
+}
+
 /* ================= SERVICES ==================== */
 .services-section h2{margin-bottom:20px}
 .services-section p{color:rgba(11,18,32,.7);margin-bottom:18px}
