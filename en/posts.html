@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>All posts — Thomas &amp; Tech</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../lang-auto.js"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../images/it-letter-logo.jpg" type="image/jpeg" sizes="32x32">
+    <link rel="shortcut icon" href="../images/it-letter-logo.jpg">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="main-nav container">
+            <div class="logo"><a href="index.html">Thomas &amp; Tech Blog</a></div>
+            <ul class="menu-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About me</a></li>
+                <li><a href="posts.html">Posts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="posts" class="posts-section">
+            <h1>All posts</h1>
+            <div class="post-grid">
+                <a class="post-link" href="blog-post-01.html">
+                    <article class="post-card">
+                        <img src="../images/AMD-Logo.jpg" alt="AMD" />
+                        <h3>AMD Adrenalin Update 26.1.1</h3>
+                        <p>Improvements and bug fixes from version 26.1.1.</p>
+                        <span class="post-date">21‑01‑2026</span>
+                    </article>
+                </a>
+
+                <a class="post-link" href="blog-post-02.html">
+                    <article class="post-card">
+                        <img src="../images/sapphire-nitro-plus-rx-9060-XT.jpg" alt="My New Graphics Card" />
+                        <h3>My New Graphics Card</h3>
+                        <p>Installation and setup of my new graphics card.</p>
+                        <span class="post-date">24‑01‑2026</span>
+                    </article>
+                </a>
+
+                <a class="post-link" href="blog-post-03.html">
+                    <article class="post-card">
+                        <img src="../images/Image-image-Etats-Unis-New-York-Statue-Liberte.jpg" alt="My Project" />
+                        <h3>My Project</h3>
+                        <p>A project of a lifetime.</p>
+                        <span class="post-date">25‑01‑2026</span>
+                    </article>
+                </a>
+
+                <a class="post-link" href="blog-post-04.html">
+                    <article class="post-card">
+                        <img src="../images/AMD-Logo.jpg" alt="AMD Adrenalin 26.2.1" />
+                        <h3>AMD Adrenalin Update 26.2.1</h3>
+                        <p>Improvements and bug fixes from version 26.2.1.</p>
+                        <span class="post-date">11‑02‑2026</span>
+                    </article>
+                </a>
+
+                <a class="post-link" href="blog-post-05.html">
+                    <article class="post-card">
+                        <img src="../images/AMD-Logo.jpg" alt="AMD Adrenalin 26.2.2" />
+                        <h3>AMD Adrenalin Update 26.2.2</h3>
+                        <p>Support for Resident Evil Requiem, Marathon, and bug fixes.</p>
+                        <span class="post-date">26‑02‑2026</span>
+                    </article>
+                </a>
+
+                <a class="post-link" href="blog-post-06.html">
+                    <article class="post-card">
+                        <img src="../images/S26-picture.jpg" alt="Samsung Galaxy S26" />
+                        <h3>Samsung Galaxy S26</h3>
+                        <p>Overview of the new Galaxy S26 lineup with AI features and camera improvements.</p>
+                        <span class="post-date">05‑03‑2026</span>
+                    </article>
+                </a>
+
+                <a class="post-link" href="blog-post-07.html">
+                    <article class="post-card">
+                        <img src="../images/Ram-shortage.png" alt="RAM price crisis" />
+                        <h3>RAM Price Crisis Driven by AI</h3>
+                        <p>Analysis of AI impact on memory prices and future market outlook.</p>
+                        <span class="post-date">05‑03‑2026</span>
+                    </article>
+                </a>
+
+                <a class="post-link" href="blog-post-08.html">
+                    <article class="post-card">
+                        <img src="../images/dlss5.0comparaison.png" alt="Nvidia DLSS 5.0" />
+                        <h3>Nvidia DLSS 5.0 AI Filter</h3>
+                        <p>Discover what is new in the latest DLSS 5.0 AI filter.</p>
+                        <span class="post-date">16‑03‑2026</span>
+                    </article>
+                </a>
+
+                <a class="post-link" href="blog-post-09.html">
+                    <article class="post-card">
+                        <img src="../images/AMD-Logo.jpg" alt="AMD Adrenalin 26.3.1" />
+                        <h3>AMD Adrenalin Update 26.3.1</h3>
+                        <p>New game support, FSR Upscaling 4.1, and several key fixes.</p>
+                        <span class="post-date">19‑03‑2026</span>
+                    </article>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.post-grid');
+            if (!container) return;
+            const links = Array.from(container.querySelectorAll('.post-link'));
+            links.sort((a, b) => {
+                const dateA = a.querySelector('.post-date')?.textContent || '';
+                const dateB = b.querySelector('.post-date')?.textContent || '';
+                const parse = str => {
+                    const parts = str.replace(/\u2011/g, '-').split('-');
+                    if (parts.length !== 3) return new Date(0);
+                    const [d, m, y] = parts.map(p => parseInt(p, 10));
+                    return new Date(y, m - 1, d);
+                };
+                return parse(dateB) - parse(dateA);
+            });
+            links.forEach(link => container.appendChild(link));
+        });
+    </script>
+
+    <footer class="site-footer container">
+        <p>© 2026 Thomas &amp; Tech Blog – All rights reserved.</p>
+    </footer>
+</body>
+</html>
