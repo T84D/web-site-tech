@@ -26,8 +26,14 @@
     <header class="site-header">
         <nav class="main-nav container">
             <div class="logo"><a href="#">Thomas &amp; Tech Blog</a></div>
+            
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-            <ul class="menu-links">
+            <ul class="menu-links" id="menu-links">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">A propos de moi</a></li>
                 <li><a href="#services">Services</a></li>
@@ -160,6 +166,25 @@
     <footer class="site-footer container">
         <p>© 2026 Thomas &amp; Tech Blog – All rights reserved.</p>
     </footer>
+
+    <!-- Mobile menu toggle -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const menuLinks = document.getElementById('menu-links');
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                menuLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+            // Close menu when a link is clicked
+            menuLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuLinks.classList.remove('active');
+                    hamburger.classList.remove('active');
+                });
+            });
+        }
+    </script>
 
     <!-- auto-update recent posts from posts.html: mon projet, ma nouvelle carte, AMD, puis le plus récent autre -->
     <script>

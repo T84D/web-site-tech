@@ -37,20 +37,61 @@ body {
 }
 .menu-links li a:hover{color:#ff9;}
 
+/* Hamburger menu button */
+.hamburger{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:8px;
+}
+.hamburger span{
+    display:block;
+    width:25px;
+    height:3px;
+    background:#fff;
+    border-radius:2px;
+    transition:all .3s ease;
+}
+.hamburger.active span:nth-child(1){
+    transform:rotate(45deg) translate(10px, 10px);
+}
+.hamburger.active span:nth-child(2){
+    opacity:0;
+}
+.hamburger.active span:nth-child(3){
+    transform:rotate(-45deg) translate(7px, -7px);
+}
+
 @media (max-width:760px){
+    .hamburger{display:flex}
     .main-nav{
         height:auto;
         padding:12px 0;
-        flex-direction:column;
-        align-items:flex-start;
-        gap:10px;
+        flex-wrap:wrap;
+        align-items:center;
     }
     .logo a{font-size:1.35rem;}
     .menu-links{
         width:100%;
-        flex-wrap:wrap;
-        gap:10px 14px;
+        flex-direction:column;
+        gap:0;
+        max-height:0;
+        overflow:hidden;
+        transition:max-height .3s ease;
+        background:#0a0f1a;
+        padding:0;
     }
+    .menu-links.active{
+        max-height:300px;
+        padding:10px 0;
+    }
+    .menu-links li{
+        padding:8px 20px;
+    }
+    .menu-links li a{display:block}
 }
 
 /* ================= HERO ==================== */
