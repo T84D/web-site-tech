@@ -18,7 +18,14 @@
     <header class="site-header">
         <nav class="main-nav container">
             <div class="logo"><a href="index.html">Thomas &amp; Tech Blog</a></div>
-            <ul class="menu-links">
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="menu-links" id="menu-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#about">A propos de moi</a></li>
                 <li><a href="posts.html">Posts</a></li>
@@ -122,6 +129,25 @@
             </div>
         </section>
     </main>
+
+    <!-- Mobile menu toggle -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const menuLinks = document.getElementById('menu-links');
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                menuLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+            // Close menu when a link is clicked
+            menuLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuLinks.classList.remove('active');
+                    hamburger.classList.remove('active');
+                });
+            });
+        }
+    </script>
 
     <!-- script to sort all posts by date (newest first) -->
     <script>
