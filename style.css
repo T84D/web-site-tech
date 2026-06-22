@@ -325,12 +325,22 @@ body.theme-dark {
 @media (min-width:800px) {
     .video-gallery { flex-direction:row; }
 }
-.video-gallery video{
+.video-gallery video,
+.video-embed iframe {
+    width:100%;
     max-width:100%;
     border:1px solid rgba(128,128,128,.5);
     border-radius:4px;
+    display:block;
+    aspect-ratio:16 / 9;
+    height:auto;
 }
 
+.video-embed {
+    width:100%;
+    max-width:100%;
+    overflow:hidden;
+}
 
 
 /* Post single image: limit height and add spacing so content below remains visible */
