@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>À propos - Thomas Tech Blog & Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Découvrez qui je suis, ce que j’aime faire et pourquoi j’écris sur la technologie avec simplicité et passion.">
+    <meta name="keywords" content="à propos, Thomas Durieu, blog tech, services informatique">
+    <script src="lang-auto.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/it-letter-logo-mini.jpg" type="image/jpeg" sizes="32x32">
+    <link rel="shortcut icon" href="images/it-letter-logo-mini.jpg">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="main-nav container">
+            <div class="logo"><a href="index.html">Thomas Tech Blog & Services</a></div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="menu-links" id="menu-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">À propos de moi</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="posts.html">Posts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="about-page-main">
+        <section class="page-hero container">
+            <p class="eyebrow">À propos de moi</p>
+            <h1>Je partage l’informatique avec passion, de façon simple et concrète.</h1>
+            <p>Je suis Thomas, un jeune passionné de technologie, curieux des nouveautés et toujours prêt à apprendre. Sur ce blog, je mets en avant mes découvertes, mes tests et mes conseils pour aider d’autres personnes à mieux comprendre le monde numérique.</p>
+        </section>
+
+        <section class="container about-page-grid">
+            <article class="about-card">
+                <h2>Qui je suis</h2>
+                <p>Je m’appelle Thomas Durieu, j’ai 18 ans et j’aime découvrir comment la technologie peut améliorer notre quotidien.</p>
+                <ul class="about-list">
+                    <li>Réparation et maintenance d’ordinateurs</li>
+                    <li>Diagnostic et résolution de pannes</li>
+                    <li>Installation et sécurisation de systèmes</li>
+                    <li>Analyse des nouveautés tech et des produits récents</li>
+                </ul>
+            </article>
+
+            <article class="about-card about-card--accent">
+                <h2>Ce que j’aime faire</h2>
+                <p>Je passe beaucoup de temps à tester des nouveautés, à comparer des équipements et à créer des contenus utiles pour les lecteurs curieux.</p>
+                <div class="chip-group">
+                    <span class="chip">Réparation PC</span>
+                    <span class="chip">Hardware</span>
+                    <span class="chip">IA</span>
+                    <span class="chip">Guides pratiques</span>
+                </div>
+            </article>
+        </section>
+
+        <section class="container about-story">
+            <div class="story-block">
+                <h2>Mon approche</h2>
+                <p>Je crois qu’un conseil technique doit être clair, accessible et orienté résultat. C’est pour cela que j’essaie de transformer des sujets parfois techniques en contenus simples à comprendre.</p>
+            </div>
+
+            <div class="story-block">
+                <h2>Mes objectifs</h2>
+                <p>Mon but est de partager mes connaissances, d’aider les gens à mieux choisir leurs équipements et de créer une vraie communauté autour de l’enthousiasme technologique.</p>
+            </div>
+        </section>
+
+        <section class="container about-cta">
+            <h2>Vous souhaitez discuter ou demander un service ?</h2>
+            <p>Je suis disponible pour répondre à vos questions et vous accompagner dans vos projets informatiques.</p>
+            <a class="cta-button" href="index.html#services">Voir mes services</a>
+        </section>
+    </main>
+
+    <footer class="site-footer container">
+        <p>© 2026 Thomas Tech Blog & Services – All rights reserved.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const menuLinks = document.getElementById('menu-links');
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                menuLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+            menuLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuLinks.classList.remove('active');
+                    hamburger.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
