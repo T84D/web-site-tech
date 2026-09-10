@@ -1,8 +1,7 @@
-/* ================= GLOBAL ==================== */
+
 :root {
-    /* Custom colors – adjust as you wish */
-    --primary:#2b6ac5;      /* Blue for headings & buttons */
-    --secondary:#e8f7ff;   /* Light blue for accents */
+    --primary:#2b6ac5;      
+    --secondary:#e8f7ff;   
     --bg-start:#eaf6ff;
     --bg-end:#f4fbff;
     --text-main:#0b1220;
@@ -53,7 +52,7 @@ body.theme-dark {
 
 .container { max-width:1200px; margin:auto; padding:0 20px; }
 
-/* ================= HEADER ==================== */
+
 .site-header{background:var(--header-bg);color:var(--header-text);}
 .main-nav{
     display:flex;
@@ -86,7 +85,7 @@ body.theme-dark {
 }
 .menu-links li a:hover{color:#ff9;}
 
-/* Hamburger menu button */
+
 .hamburger{
     display:none;
     flex-direction:column;
@@ -143,7 +142,7 @@ body.theme-dark {
     .menu-links li a{display:block}
 }
 
-/* ================= HERO ==================== */
+
 .hero-section{
     background: linear-gradient(180deg,#0b1220 0%, rgba(43,106,197,0.18) 60%), url('images/systeme-informatique.jpg') no-repeat center/cover;
     padding:120px 0;
@@ -187,7 +186,7 @@ body.theme-dark {
 .cta-secondary:hover{transform:translateY(-2px); box-shadow:0 14px 36px rgba(11,18,32,0.08); filter:brightness(.98)}
 @media (max-width:600px){.hero-ctas{flex-direction:column;gap:10px}.cta-secondary{width:100%;text-align:center}}
 
-/* ================= ABOUT ME ==================== */
+
 .about-section h2{margin-bottom:30px;}
 .profile-box{
     display:flex;gap:20px;padding:20px 0;background:var(--surface-soft);
@@ -208,7 +207,7 @@ body.theme-dark {
     }
 }
 
-/* ================= SERVICES ==================== */
+
 .services-section h2{margin-bottom:20px}
 .services-section p{color:var(--text-soft);margin-bottom:18px}
 .service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
@@ -219,7 +218,7 @@ body.theme-dark {
 .service-button{display:inline-block;background:transparent;border:1px solid var(--primary);color:var(--primary);padding:.5rem .9rem;border-radius:6px;text-decoration:none;font-weight:600;margin-top:auto}
 .service-button:hover{background:var(--primary);color:#fff}
 
-/* ================= ABOUT PAGE ==================== */
+
 .about-page-main{padding:40px 0 60px;}
 .page-hero{
     background: linear-gradient(135deg, rgba(43,106,197,0.14), rgba(11,18,32,0.04));
@@ -281,11 +280,11 @@ body.theme-dark {
     }
 }
 
-/* Service card background variants */
+
 .service-card--win11{
     background-image: url('images/Windows_11.jpg');
     background-repeat: no-repeat;
-    background-size: 140%; /* zoomed in by default */
+    background-size: 140%; 
     background-position: center center;
     color:#fff;
     position:relative;
@@ -297,7 +296,7 @@ body.theme-dark {
     padding:20px;
     transition:background-size .6s cubic-bezier(.2,.8,.2,1);
 }
-/* overlay as a separate layer so we can animate its opacity */
+
 .service-card--win11::before{
     content:"";
     position:absolute;inset:0;
@@ -306,20 +305,20 @@ body.theme-dark {
     transition:opacity .45s ease;
     z-index:0;
 }
-/* keep card content above overlay */
+
 .service-card--win11 > *{position:relative;z-index:1}
 .service-card--win11 h3, .service-card--win11 p{color:#fff}
 .service-card--win11 .service-button{background:rgba(255,255,255,0.95);color:#0b1220;border-color:rgba(11,18,32,0.06)}
 .service-card--win11 .service-button:hover{background:#fff;color:#0b1220;filter:brightness(.98)}
 
-/* Hover interaction: de-zoom image and fade overlay to reveal more */
+
 .service-card--win11:hover{background-size:100%}
 .service-card--win11:hover::before{opacity:.28}
 .service-card--win11:focus-within{background-size:100%}
 @media (max-width:900px){.service-card--win11{min-height:220px}}
 @media (max-width:600px){.service-card--win11{min-height:160px;padding:14px}}
 
-/* Service card for applications (Office etc.) */
+
 .service-card--apps{
     background-image: url('images/microsoft-word-excel-powerpoint.jpeg');
     background-repeat: no-repeat;
@@ -352,13 +351,13 @@ body.theme-dark {
 @media (max-width:900px){.service-card--apps{min-height:220px}}
 @media (max-width:600px){.service-card--apps{min-height:160px;padding:14px}}
 
-/* ================= POSTS GRID ==================== */
+
 .posts-section h2{margin-bottom:30px;}
 .post-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:20px;
-    grid-auto-rows: 1fr; /* make each row equal height */
+    grid-auto-rows: 1fr; 
 }
 .post-card{
     background:var(--card-bg);
@@ -366,20 +365,19 @@ body.theme-dark {
     border-radius:4px;box-shadow:0 2px 5px rgba(0,0,0,.05);
     display:flex;
     flex-direction:column;
-    height:100%; /* fill grid cell */
-    justify-content:space-between; /* space out content evenly */
+    height:100%; 
+    justify-content:space-between; 
 }
 .post-card img{
     width:100%;
-    /* fix height to keep cards uniform but show full image */
     height:180px;
-    object-fit:contain; /* show entire image, add letterboxing if needed */
-    background:var(--image-bg); /* light grey behind smaller images */
+    object-fit:contain; 
+    background:var(--image-bg); 
     border-radius:4px;
     margin-bottom:10px;
 }
 
-/* mobile: always keep services and posts in 2 columns */
+
 @media (max-width:760px){
     .service-grid,
     .post-grid{
@@ -393,7 +391,7 @@ body.theme-dark {
     .post-card h3{font-size:1rem;}
 }
 
-/* video gallery used in blog posts */
+
 .video-gallery{
     display:flex;
     flex-direction:column;
@@ -421,11 +419,15 @@ body.theme-dark {
 }
 
 
-/* Post single image: limit height and add spacing so content below remains visible */
-.post-single img{width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:8px;margin:0 0 18px 0;display:block}
-@media (max-width:600px){.post-single img{max-height:240px}}
 
-/* ensure post thumbnails shrink appropriately on mobile */
+.post-single img{width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:8px;margin:0 0 18px 0;display:block}
+.post-single img.pixel-hero{height:520px;max-height:520px;object-fit:contain;background:var(--image-bg);padding:12px}
+.post-single .pixel-gallery img{height:280px;max-height:280px;object-fit:contain;background:var(--image-bg);padding:8px}
+@media (max-width:600px){.post-single img{max-height:240px}}
+@media (max-width:600px){.post-single img.pixel-hero{height:360px;max-height:360px}}
+@media (max-width:600px){.post-single .pixel-gallery img{height:220px;max-height:220px}}
+
+
 @media (max-width:600px){
     .post-card img { height:140px; }
 }
@@ -438,7 +440,7 @@ textarea{width:100%;padding:.75rem;}
     grid-column:span 2;background:var(--primary);color:#fff;border:none;cursor:pointer;padding:.75rem 1.5rem;border-radius:4px;
 }
 .submit-button:hover{background:var(--secondary);}
-/* bench image styling for better visibility */
+
 .post-content img.bench{
     display:block;
     width:100%;
@@ -449,22 +451,22 @@ textarea{width:100%;padding:.75rem;}
     box-shadow:0 4px 12px rgba(0,0,0,.05);
 }
 
-/* ensure bench image isn't cropped by the generic post-single rule */
+
 .post-single img.bench{
     max-height:none;
     object-fit:contain;
 }
 
-/* ================= POST LINKS ==================== */
+
 .post-link{display:block;text-decoration:none;color:inherit}
 .post-card{transition:transform .15s, box-shadow .15s}
 .post-link:hover .post-card{transform:translateY(-6px);box-shadow:0 8px 20px rgba(0,0,0,.08)}
 @media (max-width:600px){.post-link:hover .post-card{transform:none;box-shadow:none}}
-/* ================= FOOTER ==================== */
+
 .site-footer{background:var(--footer-bg);color:var(--footer-text);padding:40px 0;text-align:center;}
 .social-links{margin-top:10px;display:flex;gap:15px;justify-content:center;}
 
-/* Navigation social links */
+
 .post-social{margin:48px auto 28px;display:flex;gap:18px;align-items:center;font-size:1.05rem;color:var(--text-main);padding:20px 22px;border-top:1px solid rgba(128,128,128,0.25);max-width:1200px;box-sizing:border-box}
 .post-social span{margin-right:10px;color:var(--text-soft);font-weight:600}
 .post-social a{color:var(--primary);text-decoration:none;padding:10px 14px;border-radius:8px;border:1px solid rgba(43,106,197,.12);transition:background .12s, color .12s, transform .12s;font-weight:600}
@@ -489,7 +491,7 @@ textarea{width:100%;padding:.75rem;}
     }
 }
 
-/* Dark theme toggle button */
+
 .theme-toggle{
     position:fixed;
     right:16px;

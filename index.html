@@ -1,35 +1,29 @@
-<!-- Fichier index principal du blog Thomas & Tech -->
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="utf-8">
     <title>Thomas Tech Blog & Services</title>
-    <!-- Mobile first -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Découvrez les nouveautés tech, AMD, NVIDIA et IA avec des analyses, guides et conseils pratiques pour mieux comprendre les derniers changements du web.">
     <meta name="keywords" content="blog tech, actualités tech, AMD, NVIDIA, smartphones, IA, guides">
     <script src="lang-auto.js"></script>
 
-    <!-- 1. Link to the external stylesheet -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- 2. Optional: Google Fonts (Inter) – feel free to change the font -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
         rel="stylesheet">
 
-    <!-- Favicon -->
     <link rel="icon" href="images/it-letter-logo-mini.jpg" type="image/jpeg" sizes="32x32">
     <link rel="shortcut icon" href="images/it-letter-logo-mini.jpg">
 </head>
 
-<!-- Le contenu visible de la page commence ici -->
+
 <body>
-    <!-- ================= HEADER / NAVIGATION ==================== -->
     <header class="site-header">
         <nav class="main-nav container">
             <div class="logo"><a href="#">Thomas Tech Blog & Services</a></div>
-            
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
@@ -45,19 +39,16 @@
         </nav>
     </header>
 
-    <!-- ================= HERO SECTION ==================== -->
     <section id="hero" class="hero-section container">
         <h1>Bonjour, je suis Thomas, Je suis passionné de technologie &amp; blogger.</h1>
         <p>Je répare des ordinateurs dans mon temps libre et je m'intéresse aux dernières tendances du monde informatique.</p>
 
-        <!-- CTA -->
         <div class="hero-ctas">
             <a href="#posts" class="cta-button">Lire mes posts</a>
             <a href="#services" class="cta-secondary cta-button">Voir les services</a>
         </div> 
     </section>
 
-    <!-- ================= ABOUT ME SECTION ==================== -->
     <section id="about" class="about-section container">
         <h2>À propos de moi</h2>
         <article class="profile-box">
@@ -72,7 +63,6 @@
         </article>
     </section>
 
-    <!-- ================= SERVICES SECTION ==================== -->
     <section id="services" class="services-section container">
         <h2>Services</h2>
         <p>Voici les services que je propose pour améliorer votre expérience informatique.</p>
@@ -100,12 +90,10 @@
         </div>
     </section>
 
-    <!-- ================= POSTS LIST SECTION ==================== -->
     <section id="posts" class="posts-section container">
         <h2>Posts récents</h2>
 
         <div class="post-grid">
-            <!-- Post 3 (priorité fixe dans les récents) -->
             <a class="post-link" href="blog-post-03.html" data-static="mon-projet">
             <article class="post-card">
                 <img src="images/Image-image-Etats-Unis-New-York-Statue-Liberte.jpg"
@@ -118,7 +106,6 @@
             </article>
             </a>
 
-            <!-- Post 2 (priorité fixe dans les récents) -->
             <a class="post-link" href="blog-post-02.html" data-static="ma-nouvelle-carte">
             <article class="post-card">
                 <img src="images/sapphire-nitro-plus-rx-9060-XT.jpg"
@@ -131,7 +118,6 @@
             </article>
             </a>
 
-            <!-- AMD (priorité fixe, remplacé par nouveau AMD si présent) -->
             <a class="post-link" href="blog-post-09.html" data-amd="true">
             <article class="post-card">
                 <img src="images/AMD-Logo.jpg" alt="AMD" />
@@ -141,21 +127,19 @@
             </article>
             </a>
 
-            <!-- Placeholder 4e post (sera remplacé par le plus récent autre que Mon projet/Ma nouvelle carte/AMD) -->
-            <a class="post-link" href="blog-post-08.html">
+            <a class="post-link" href="blog-post-17.html">
             <article class="post-card">
-                <img src="images/dlss5.0comparaison.png" alt="Nvidia DLSS 5.0" />
+                <img src="images/google-pixel-11.webp" alt="Google Pixel 11" />
 
-                <h3>Nvidia DLSS 5.0 filtre IA</h3>
-                <p>Découverte des nouveautés du filtre IA de DLSS 5.0.</p>
+                <h3>Google Pixel 11</h3>
+                <p>Présentation des nouveautés attendues autour du Tensor G6 et de la photo.</p>
 
-                <span class="post-date">16‑03‑2026</span>
+                <span class="post-date">10‑09‑2026</span>
             </article>
             </a>
         </div>
     </section>
 
-    <!-- liens vers les réseaux sociaux et autres profils -->
     <div class="post-social container">
         <span>Où me retrouver:</span>
         <a href="https://twitter.com/T84D144hz">X</a>
@@ -165,12 +149,10 @@
 
 
 
-    <!-- ================= FOOTER ==================== -->
     <footer class="site-footer container">
         <p>© 2026 Thomas Tech Blog & Services – All rights reserved.</p>
     </footer>
 
-    <!-- Mobile menu toggle -->
     <script>
         const hamburger = document.getElementById('hamburger');
         const menuLinks = document.getElementById('menu-links');
@@ -179,7 +161,6 @@
                 menuLinks.classList.toggle('active');
                 hamburger.classList.toggle('active');
             });
-            // Close menu when a link is clicked
             menuLinks.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     menuLinks.classList.remove('active');
@@ -189,7 +170,7 @@
         }
     </script>
 
-    <!-- auto-update recent posts from posts.html: mon projet, ma nouvelle carte, AMD, puis le plus récent autre -->
+    <!-- Met à jour les posts récents depuis posts.html : projet, carte graphique, AMD, puis le plus récent autre -->
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
             const container = document.querySelector('#posts .post-grid');
@@ -255,7 +236,7 @@
                     container.appendChild(otherRecent[0].cloneNode(true));
                 }
 
-                // garde une limite stricte de 4 cartes
+                // Garde une limite stricte de quatre cartes
                 Array.from(container.children).slice(4).forEach(el => el.remove());
             } catch (e) {
                 console.error('Erreur mise à jour posts récents:', e);
