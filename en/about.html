@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>About - Thomas Tech Blog & Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Learn more about Thomas, his passion for technology, and the values behind his blog and IT services.">
+    <meta name="keywords" content="about, Thomas Durieu, tech blog, IT services">
+    <script src="../lang-auto.js"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../images/it-letter-logo-mini.jpg" type="image/jpeg" sizes="32x32">
+    <link rel="shortcut icon" href="../images/it-letter-logo-mini.jpg">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="main-nav container">
+            <div class="logo"><a href="index.html">Thomas Tech Blog & Services</a></div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="menu-links" id="menu-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About me</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="posts.html">Posts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="about-page-main">
+        <section class="page-hero container">
+            <p class="eyebrow">About me</p>
+            <h1>I share technology with passion, in a simple and practical way.</h1>
+            <p>I’m Thomas, a young technology enthusiast, curious about new developments and always eager to learn. This blog is where I share my discoveries, tests, and practical advice to help others better understand the digital world.</p>
+        </section>
+
+        <section class="container about-page-grid">
+            <article class="about-card">
+                <h2>Who I am</h2>
+                <p>My name is Thomas Durieu, I’m 18 years old, and I love discovering how technology can improve everyday life.</p>
+                <ul class="about-list">
+                    <li>Computer repair and maintenance</li>
+                    <li>Fault diagnosis and technical troubleshooting</li>
+                    <li>System setup and security</li>
+                    <li>Analysis of tech news and recent products</li>
+                </ul>
+            </article>
+
+            <article class="about-card about-card--accent">
+                <h2>What I enjoy doing</h2>
+                <p>I spend a lot of time testing new technologies, comparing equipment, and creating useful content for curious readers.</p>
+                <div class="chip-group">
+                    <span class="chip">PC repair</span>
+                    <span class="chip">Hardware</span>
+                    <span class="chip">AI</span>
+                    <span class="chip">Practical guides</span>
+                </div>
+            </article>
+        </section>
+
+        <section class="container about-story">
+            <div class="story-block">
+                <h2>My approach</h2>
+                <p>I believe technical advice should be clear, accessible, and result-oriented. That is why I try to turn sometimes complex topics into content that is easy to understand.</p>
+            </div>
+
+            <div class="story-block">
+                <h2>My goals</h2>
+                <p>My goal is to share knowledge, help people make better choices, and build a real community around enthusiasm for technology.</p>
+            </div>
+        </section>
+
+        <section class="container about-cta">
+            <h2>Would you like to talk or request a service?</h2>
+            <p>I’m available to answer your questions and support you in your IT projects.</p>
+            <a class="cta-button" href="index.html#services">See my services</a>
+        </section>
+    </main>
+
+    <footer class="site-footer container">
+        <p>© 2026 Thomas Tech Blog & Services – All rights reserved.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const menuLinks = document.getElementById('menu-links');
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                menuLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+            menuLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuLinks.classList.remove('active');
+                    hamburger.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>

@@ -244,6 +244,25 @@ body.theme-dark {
 @media (max-width:600px){
     .about-page-main{padding:24px 0 40px}
     .page-hero,.about-card,.story-block,.about-cta{padding:20px}
+    .page-hero h1{font-size:clamp(1.5rem, 7vw, 2.1rem)}
+    .page-hero p{font-size:0.98rem}
+    .about-page-grid,
+    .about-story{
+        grid-template-columns:1fr;
+        gap:16px;
+    }
+    .about-card,
+    .story-block,
+    .about-cta{
+        border-radius:14px;
+    }
+    .chip-group{
+        gap:8px;
+    }
+    .chip{
+        font-size:0.85rem;
+        padding:7px 10px;
+    }
 }
 
 /* Service card background variants */
