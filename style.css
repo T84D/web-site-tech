@@ -61,7 +61,7 @@ body.theme-dark {
     align-items:center;
     height:80px;
 }
-.logo a{font-size:1.75rem;text-decoration:none;color:var(--header-text);}
+.logo a{font-size:clamp(1.2rem, 2vw, 1.75rem); text-decoration:none; color:var(--header-text); line-height:1.2;}
 .menu-links{
     list-style:none;margin:0;padding:0;display:flex;gap:20px;
 }
@@ -106,7 +106,7 @@ body.theme-dark {
         flex-wrap:wrap;
         align-items:center;
     }
-    .logo a{font-size:1.35rem;}
+    .logo a{font-size:1.2rem;}
     .menu-links{
         width:100%;
         flex-direction:column;
