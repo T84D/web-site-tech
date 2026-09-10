@@ -30,7 +30,6 @@
                 var saved = window.localStorage.getItem(THEME_KEY);
                 if (saved === 'dark' || saved === 'light') return saved;
             } catch (err) {
-                // ignore storage errors
             }
             return 'light';
         };
@@ -63,7 +62,6 @@
                 try {
                     window.localStorage.setItem(THEME_KEY, next);
                 } catch (err) {
-                    // ignore storage errors
                 }
             });
 
@@ -76,6 +74,5 @@
             initThemeToggle();
         }
     } catch (e) {
-        // no-op: keep current page if detection fails
     }
 })();
