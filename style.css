@@ -61,7 +61,23 @@ body.theme-dark {
     align-items:center;
     height:80px;
 }
-.logo a{font-size:clamp(1.2rem, 2vw, 1.75rem); text-decoration:none; color:var(--header-text); line-height:1.2;}
+.logo{
+    display:flex;
+    align-items:center;
+    min-width:0;
+}
+.logo a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Inter', sans-serif;
+    font-size:clamp(1.2rem, 2vw, 1.75rem);
+    font-weight:600;
+    letter-spacing:0.02em;
+    text-decoration:none;
+    color:var(--header-text);
+    line-height:1.2;
+}
 .menu-links{
     list-style:none;margin:0;padding:0;display:flex;gap:20px;
 }

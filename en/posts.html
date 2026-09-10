@@ -8,6 +8,7 @@
     <meta name="keywords" content="tech articles, tech blog, AMD, NVIDIA, smartphones, AI, news">
     <script src="../lang-auto.js"></script>
     <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="../images/it-letter-logo.jpg" type="image/jpeg" sizes="32x32">
     <link rel="shortcut icon" href="../images/it-letter-logo.jpg">
 </head>
@@ -15,7 +16,14 @@
     <header class="site-header">
         <nav class="main-nav container">
             <div class="logo"><a href="index.html">Thomas Tech Blog & Services</a></div>
-            <ul class="menu-links">
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="menu-links" id="menu-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="../about.html">About me</a></li>
                 <li><a href="posts.html">Posts</a></li>
@@ -143,5 +151,24 @@
     <footer class="site-footer container">
         <p>© 2026 Thomas Tech Blog & Services – All rights reserved.</p>
     </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const menuLinks = document.getElementById('menu-links');
+        if (hamburger && menuLinks) {
+            hamburger.addEventListener('click', () => {
+                const isOpen = menuLinks.classList.toggle('active');
+                hamburger.classList.toggle('active', isOpen);
+                hamburger.setAttribute('aria-expanded', String(isOpen));
+            });
+            menuLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuLinks.classList.remove('active');
+                    hamburger.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+    </script>
 </body>
 </html>
